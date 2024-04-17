@@ -11,9 +11,13 @@ def split_released(released_value):
     #             released country (str) or None if the value is empty or invalid.
     try:
         # Remove leading/trailing whitespace and split on comma
-        split_data = released_value.strip().split(",")
+        split_data = released_value.strip().split("(")
         released_date = split_data[0].strip()
         released_country = split_data[1].strip() if len(split_data) > 1 else None
+        # Delete )
+        if released_country != None:
+            p_split = released_country.strip().split(")")
+            released_country = p_split[0].strip()
         return released_date, released_country
     except (IndexError, ValueError):
         # Handle cases where the released value is empty or cannot be split
@@ -67,7 +71,7 @@ with open("movies.csv", "r", encoding="utf-8") as csvfile:
         # Prepare data for insertion (handle None values for empty fields)
         data = (
             name,
-            rating if rating else None,  # Convert rating to float if not empty
+            rating if rating else None,  # Convert rating if not empty
             genre,
             int(year) if year else None,  # Convert year to int if not empty
             released_date,
