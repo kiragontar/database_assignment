@@ -1,25 +1,27 @@
 -- create database database_assignment_1nf;
 -- show databases;
+
 USE database_assignment_1nf;
--- CREATE TABLE movies_1nf (
---   m_id INT AUTO_INCREMENT PRIMARY KEY,
---   name VARCHAR(255),
---   rating VARCHAR(10),
---   genre VARCHAR(50),
---   year INT,
---   released_date VARCHAR(50),
---   released_country VARCHAR(50),
---   score DECIMAL(2, 1),
---   votes INT,
---   director VARCHAR(255),
---   writer VARCHAR(255),
---   star VARCHAR(255),
---   country VARCHAR(50),
---   budget INT,
---   gross INT,
---   company VARCHAR(255),
---   runtime INT
--- );
+drop table movies_1nf;
+CREATE TABLE movies_1nf (
+  m_id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  rating VARCHAR(10),
+  genre VARCHAR(50),
+  year INT,
+  released_date VARCHAR(50),
+  released_country VARCHAR(50),
+  score DECIMAL(2, 1),
+  votes INT,
+  director VARCHAR(255),
+  writer VARCHAR(255),
+  star VARCHAR(255),
+  country VARCHAR(50),
+  budget INT,
+  gross INT,
+  company VARCHAR(255),
+  runtime INT
+);
 show tables;
 -- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Hhkn3481$';
 -- select * from movies_1nf;
